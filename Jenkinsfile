@@ -11,6 +11,22 @@ pipeline {
             }
         }
 
+        stage('Setup Environment') {
+                    steps {
+                        sh '''
+                            echo "=== Checking Java ==="
+                            java -version
+                            echo "=== Checking Maven ==="
+                            if ! command -v mvn &> /dev/null; then
+                                echo "Maven not found, installing..."
+                                apt-get update
+                                apt-get install -y maven
+                            fi
+                            mvn -version
+                        '''
+                    }
+                }
+
         // Stage 2: Run Tests
         stage('Run Tests') {
             steps {
