@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AmazonTestSuite" verbose="1">
+
+    <!-- TEST 1: Basic Navigation Test -->
+    <test name="NavigationTest">
+        <classes>
+            <class name="tests.SimpleNavigationTest"/>
+        </classes>
+    </test>
+
+    <!-- TEST 2: Search Functionality -->
+    <test name="SearchTest">
+        <classes>
+            <class name="tests.AmazonSearchTest">
+                <methods>
+                    <include name="testBasicSearchFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
