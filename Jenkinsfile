@@ -1,13 +1,9 @@
 pipeline {
-    agent {
-            docker {
-                image 'selenium/standalone-chrome:latest'
-                args '--user root -v /var/jenkins_home/workspace/testng-automation:/workspace'
-            }
-        }
+    agent any
 
     stages {
-        stage('Checkout') {
+        // Stage 1: Get the latest test code
+        stage('Checkout Code') {
             steps {
                 git branch: 'main',
                     url: 'https://github.com/mangitfit/Amazontestng.git',
@@ -15,21 +11,19 @@ pipeline {
             }
         }
 
+
+        // Stage 2: Run Tests
         stage('Run Tests') {
             steps {
                 sh 'mvn clean test'
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
-                }
-            }
         }
     }
 
+    // Stage 3: Report Results (runs after all stages)
     post {
         always {
-            echo "Build completed - check test results!"
+            junit 'target/surefire-reports/*.xml'
         }
     }
 }
