@@ -37,24 +37,24 @@ public class SearchResultsPage {
         return searchResults.size();
     }
 
-    /**
-     * 🔍 METHOD: Verify results contain expected text
-     * @param expectedText - Text that should appear in results
-     * @return boolean - true if text found in any result
-     *
-     * Checks both title selectors since Amazon UI can vary
-     */
+//    /**
+//     * 🔍 METHOD: Verify results contain expected text
+//     * @param expectedText - Text that should appear in results
+//     * @return boolean - true if text found in any result
+//     *
+//     * Checks both title selectors since Amazon UI can vary
+//     */
 
-    public boolean verifySearchResultsContainText(String expectedText) {
-        wait.until(ExpectedConditions.visibilityOfAllElements(productTitles));
-
-        for (WebElement title : productTitles) {
-            if (title.getText().toLowerCase().contains(expectedText.toLowerCase()))
-                return true;
-        }
-
-        return false;
-    }
+//    public boolean verifySearchResultsContainText(String expectedText) {
+//        wait.until(ExpectedConditions.visibilityOfAllElements(productTitles));
+//
+//        for (WebElement title : productTitles) {
+//            if (title.getText().toLowerCase().contains(expectedText.toLowerCase()))
+//                return true;
+//        }
+//
+//        return false;
+//    }
 
     //verify search results are displayed
     public void verifysearchResultsAreDisplayed(){
@@ -68,16 +68,16 @@ public class SearchResultsPage {
      * Helpful for verifying search is working correctly
      */
 
-    public void printFirstFiveResults(){
-
-        int count = Math.min(productTitles.size(),5);
-
-        for(int i=0;i<count;i++){
-          String title =   productTitles.size()>i ? productTitles.get(i).getText() :"N/A";
-
-          System.out.println((i+1) + "." + title);
-        }
-    }
+//    public void printFirstFiveResults(){
+//
+//        int count = Math.min(productTitles.size(),5);
+//
+//        for(int i=0;i<count;i++){
+//          String title =   productTitles.size()>i ? productTitles.get(i).getText() :"N/A";
+//
+//          System.out.println((i+1) + "." + title);
+//        }
+//    }
 
 
 

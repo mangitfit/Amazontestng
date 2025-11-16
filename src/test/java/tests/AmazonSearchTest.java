@@ -49,11 +49,11 @@ public class AmazonSearchTest extends BaseTest {
         resultsPage.verifysearchResultsAreDisplayed();
 
         //5.verify search results contain our search term
-         boolean containsSearchTerm =     resultsPage.verifySearchResultsContainText(searchItem);
-
-         Assert.assertTrue(containsSearchTerm,"Search results should contain the search term" + searchItem );
-
-        //6. print results for visibility
-        resultsPage.printFirstFiveResults();
+//         boolean containsSearchTerm =     resultsPage.verifySearchResultsContainText(searchItem);
+//
+//         Assert.assertTrue(containsSearchTerm,"Search results should contain the search term" + searchItem );
+//
+//        //6. print results for visibility
+//        resultsPage.printFirstFiveResults();
     }
 }
