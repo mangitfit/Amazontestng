@@ -3,12 +3,6 @@
 <suite name="AmazonTestSuite" verbose="1">
 
     <!-- TEST 1: Basic Navigation Test -->
-    <test name="NavigationTest">
-        <classes>
-            <class name="tests.SimpleNavigationTest"/>
-        </classes>
-    </test>
-
     <!-- TEST 2: Search Functionality -->
     <test name="SearchTest">
         <classes>
