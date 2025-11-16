@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+            docker {
+                image 'selenium/standalone-chrome:latest'
+                args '--user root -v /var/jenkins_home/workspace/testng-automation:/workspace'
+            }
+        }
 
     stages {
         stage('Checkout') {

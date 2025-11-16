@@ -10,14 +10,14 @@
     </test>
     <!-- TEST 1: Basic Navigation Test -->
     <!-- TEST 2: Search Functionality -->
-<!--    <test name="SearchTest">-->
-<!--        <classes>-->
-<!--            <class name="tests.AmazonSearchTest">-->
-<!--                <methods>-->
-<!--                    <include name="testBasicSearchFunctionality"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="SearchTest">
+        <classes>
+            <class name="tests.AmazonSearchTest">
+                <methods>
+                    <include name="testBasicSearchFunctionality"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
 </suite>
