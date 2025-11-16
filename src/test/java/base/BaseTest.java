@@ -14,12 +14,13 @@ import java.time.Duration;
 public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    private ChromeOptions options;
 
     @BeforeSuite
     public void setupSuite() {
         System.out.println("=== Amazon Search Test Suite Started ===");
         WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
+        options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
@@ -31,7 +32,7 @@ public class BaseTest {
     public void setupMethod() { // ✅ NO PARAMETERS!
         System.out.println("=== Setting up Chrome browser ===");
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
